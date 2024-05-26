@@ -1,32 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Index</title>
-</head>
-<body>
+{% extends 'base.html' %}
+<!-- {% from 'macros.html' import render_input %} -->
 
 
-<!-- Створюємо поле інпуту. -->
-<input id="userinput" type="text" placeholder="Введіть текст: ">
-
-<!-- Створюємо кнопку. -->
-<button onclick="UserInputOutput()">Показати текст</button>
+{% block title %}
+    Main Page
+{% endblock %}
 
 
+{% block content %}
+    <h1>All Posts</h1>
+    
+    <a href="/create_post" class="button is-primary">Create new Post</a>
 
-<!-- Створюємо JS функцію яка виводитиме у браузері повідомлення, надсилаючи йому те, що він ввів у поле вводу. -->
-<script>
-    function UserInputOutput() {
-        var element = document.getElementById("userinput")
-        var userinput = element.value
-        alert("Ви ввели " + userinput)
-    }
-</script>
+    <div class="content">
+        {% for post in all_posts %}
+            <div class="box">
+                <h2 class="title is-4">{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <a class="button is-link" href="/read_post_detail/{{ post.id }}">Read Details</a>
+                <a class="button is-warning" href="/update_post/{{ post.id }}">Edit Post</a>
+                <!-- <a class="button is-danger" href="/delete_post/{{ post.id }}">Delete Post</a> -->
+                <button class="button is-danger delete-post" data-id="{{ post.id }}">Delete Post</button>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
 
 
+{% block scripts %}
+    <script>
+        $(document).ready(function() {
+            $(".delete-post").click(function() {
+                var postID = $(this).data("id");
+                if (confirm("Are you sure that you want to delete this post?")) {
+                    window.location.href = '/delete_post/' + postID;
 
-</body>
-</html>
+                }
+            });
+        });
+    </script>
+{% endblock %}

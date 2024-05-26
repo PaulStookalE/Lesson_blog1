@@ -89,7 +89,7 @@ def update_post(id):
         else:
             return 'Онови поля, оскільки ти їх не змінив/ла.'
     else:
-        return render_template('create_post.html', post=post)
+        return render_template('update_post.html', post=post)
     
 
 
