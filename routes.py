@@ -1,5 +1,5 @@
 # Створюємо файл зі шляхами, який потім імпортуємо у __init__.py.
-from .. import app
+from . import app
 from flask import render_template, request, redirect
 from .models import Post, session
 from dotenv import load_dotenv
@@ -8,14 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
-
-
-
 # Виймаємо всі пости із БД і надсилаємо їх у FrontEnd.
-@app.route('/read_posts')
+@app.route('/')
 def read_all_posts():
     all_posts = session.query(Post).all()
     return render_template('index.html', all_posts=all_posts)
@@ -45,7 +39,7 @@ def create_post():
         try:
             session.add(new_post)       # Перетворюємо дані від користувача у об'єкт.
             session.commit()            # Вносимо цей об'єкт у БД.
-            return redirect('/index')
+            return redirect('/')
         
         except Exception as exc:
             return f'При збереженні поста виникла помилка: {exc}'
@@ -61,11 +55,11 @@ def create_post():
 
 
 # Оновлюємо вже існуючі поля у БД.
-@app.route('/update_post/<int:id>', methods=['GET', 'PUT'])
+@app.route('/update_post/<int:id>', methods=['GET', 'POST'])
 def update_post(id):
     post = session.query(Post).get(id)
 
-    if request.method == 'PUT':
+    if request.method == 'POST':
         content = request.form['content']
         title = request.form['title']
 
@@ -79,7 +73,7 @@ def update_post(id):
                 session.commit()
 
                 # Перенаправляємо користувача на інший роут.
-                return redirect('/index')
+                return redirect('/')
             
             except Exception as exc: 
                 return f'При оновленні поста виникла помилка: {exc}'
@@ -99,8 +93,10 @@ def update_post(id):
 def delete_post(id):
 
     # Відфільтровуємо пости по id.
-    post = session.query(Post).filter_by(id=id)
+    post = session.query(Post).get(id)
 
-    session.delete(post)
-    session.close()
-    return redirect('/index')
+    if post:
+        session.delete(post)
+        session.commit()
+        session.close()
+        return redirect('/')
