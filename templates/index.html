@@ -15,7 +15,7 @@
     <div class="content">
         {% for post in all_posts %}
             <div class="box">
-                <h2 class="title is-4">{{ post.title }}</h2>
+                <h2 class="title-index is-4">{{ post.title }}</h2>
                 <p>{{ post.content }}</p>
                 <a class="button is-link" href="/read_post_detail/{{ post.id }}">Read Details</a>
                 <a class="button is-warning" href="/update_post/{{ post.id }}">Edit Post</a>

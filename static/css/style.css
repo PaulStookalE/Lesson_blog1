@@ -1,6 +1,144 @@
-h1 {
+/* Встановлення заднього фону. */
+
+body {
+    background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-7-full.jpg);
+    background-position: top;
+    width: 100%;
+    
+
+    /* margin-bottom: 0;
+    padding-bottom: 0; */
+}
+
+
+                                                    /* Header */
+
+.nav-pills {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-7-full.jpg);
+    background-position: center;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    border: 1px solid #e7e7e7;
+    position: sticky;
+
+    
+}
+
+.nav-item {
+    display: inline;
+    float: left;
+    border: 1px solid #404040;
+    
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+.nav-link:hover {
+    background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-7-full.jpg);
+    background-position: center;
+    border-radius: 4px;
+}
+
+
+
+
+                                                    /* Footer */
+
+.footer {
+    background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-7-full.jpg);
+    background-position: bottom;
+    
+    border: 1px solid #e7e7e7;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    /* position: relative; */
+
+
+}
+
+#span-text {
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content-top {
+    text-align: center;
+}
+
+.content-bottom {
+    text-align: center;
+}
+
+.icon-link {
+    padding: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            /* Стилі для 'post_details.html'. */
+/* Стилі для заголовку блогу. */
+.title {
     border: 2px #eee solid;
-    color: brown;
+    color: black;
     text-align: center;
     padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+/* Стилі для контенту блогу. */
+#p-content {
+    text-align: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* Стилі для дати блогу. */
+#p-created {
+    text-align: right;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Стилі для кнопки видалення блогу */
+#delete-btn {
+    float: right;
+    margin: 1em;
+}
+
+/* Стилі для редагування блогу. */
+#update-btn {
+    float: right;
+    margin: 1em;
 }

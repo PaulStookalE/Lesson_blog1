@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>{% block title %} {{ title }} {% endblock %}</title>
 </head>
 <body>
+    
+    <header class="header">
+        <div class="navbar">
+            <ul class="nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/create_post">Create Post</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
     <section class="section">
         <div class="container">
@@ -17,8 +31,22 @@
         </div>
     </section>
 
+
+    <footer class="footer">
+        <div class="content-top">
+            <a class="icon-link" href="/"><i class="fa-regular fa-id-card fa-xl" style="color: #000000;"></i></a>
+            <span id="span-text" class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+        </div>
+
+        <div class="content-bottom">
+            <a class="icon-link" href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i></a>
+            <a class="icon-link" href="#"><i class="fa-brands fa-telegram fa-xl" style="color: #000000;"></i></a>
+        </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {% block scripts %} {% endblock %}
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/afcda73a6d.js" crossorigin="anonymous"></script>
 </body>
 </html>

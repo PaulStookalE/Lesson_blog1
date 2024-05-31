@@ -9,10 +9,11 @@
 {% block content %}
     <h1 class="title">{{ post.title }}</h1>
 
-    <p>{{ post.content }}</p>
-    <p>{{ post.created }}</p>
-    <a href="/update_post/{{ post.id }}" class="button is-warning">Edit Post</a>
-    <button class="button is-danger delete-post">Delete Post</button>
+    <p id="p-content">{{ post.content }}</p>
+    <p id="p-created">{{ post.created }}</p>
+    <a id="button-back" class="button is-info" href="/">Back</a>
+    <a id="update-btn" href="/update_post/{{ post.id }}" class="button is-warning">Edit Post</a>
+    <button id="delete-btn" class="button is-danger delete-post">Delete Post</button>
 
 
 {% endblock %}
