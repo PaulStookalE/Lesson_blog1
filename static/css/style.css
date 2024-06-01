@@ -3,11 +3,14 @@
 body {
     background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-7-full.jpg);
     background-position: top;
-    width: 100%;
-    
 
-    /* margin-bottom: 0;
-    padding-bottom: 0; */
+    background-repeat: no-repeat;
+
+}
+
+#title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #e7e7e7;
 }
 
 
@@ -65,10 +68,12 @@ body {
     background-position: bottom;
     
     border: 1px solid #e7e7e7;
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    /* position: relative; */
+
+    padding-top: 3rem;
+    margin-top: 3rem;
+    box-sizing: border-box;
+    display: block;
+
 
 
 }
@@ -92,19 +97,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                                             /* Стилі для 'post_details.html'. */
 /* Стилі для заголовку блогу. */
 .title {
@@ -118,10 +110,12 @@ body {
 
 /* Стилі для контенту блогу. */
 #p-content {
-    text-align: center;
     color: black;
     font-family: 'Courier New', Courier, monospace;
+}
 
+.align-center {
+    text-align: center;
 }
 
 /* Стилі для дати блогу. */
@@ -142,3 +136,8 @@ body {
     float: right;
     margin: 1em;
 }
+
+
+
+
+                                        /* Стилі для create_blog.html */

@@ -27,12 +27,17 @@ def read_post(id):
 @app.route('/create_post', methods=['POST', 'GET'])
 def create_post():
     if request.method == 'POST':
-        content = request.form['content']
-        title = request.form['title']
+        title = request.form['Title:']
+        content = request.form['Content:']
+        creator = request.form['Creator:']
+        picture = request.form['Picture:']
+
         
         new_post = Post(
+            title=title,
             content=content,
-            title=title
+            creator=creator,
+            picture=picture,
         )
         
 

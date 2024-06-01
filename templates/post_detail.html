@@ -7,9 +7,9 @@
 
 
 {% block content %}
-    <h1 class="title">{{ post.title }}</h1>
+    <h1 id="title" class="title">{{ post.title }}</h1>
 
-    <p id="p-content">{{ post.content }}</p>
+    <p id="p-content" class="align-center">{{ post.content }}</p>
     <p id="p-created">{{ post.created }}</p>
     <a id="button-back" class="button is-info" href="/">Back</a>
     <a id="update-btn" href="/update_post/{{ post.id }}" class="button is-warning">Edit Post</a>

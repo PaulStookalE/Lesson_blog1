@@ -13,9 +13,12 @@ class Post(BASE):
     created = Column(DateTime, default=datetime.now())      # DateTime -- видає точний час і день створення.
     title = Column(String(100), nullable=False)
     content = Column(Text, nullable= False)                 # Text -- це той самий String, проте він має більшу місткість символів.
-
+    creator = Column(String, nullable=False)
+    picture = Column(String)
 
     # __init__ тут потрібен для того щоб поля title і content були обов'язково заповненими.
-    def __init__(self, title: str, content: str):
+    def __init__(self, title: str, content: str, creator: str, picture: str):
         self.title = title
         self.content = content
+        self.creator = creator
+        self.picture = picture

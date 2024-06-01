@@ -9,18 +9,20 @@
 
 {% block content %}
     <div id="update-post">
-        <h1 class="title">Edit Post</h1>
+        <h1 id="title" class="title">Edit Post</h1>
 
         <form method="post" action="/update_post/{{ post.id }}">
     
             <input type="hidden" value="PUT" name="_method">
     
-            {{ render_input('title', 'content', post.title, 'Enter the heading') }}
-            {{ render_input('content', 'content', post.content, 'Enter content') }}
+            {{ render_input('title', 'content', post.title, '') }}
+            {{ render_input('content', 'content', post.content, '') }}
+            {{ render_input('Creator:', 'creator', post.creator, '') }}
+            {{ render_input('Picture:', 'picture', post.picture, '') }}
     
             <div class="control">
                 <button class="button is-primary" type="submit">Save</button>
-                <button class="button is-info change-bg">Change Background Theme</button>
+                <!-- <button class="button is-info change-bg">Change Background Theme</button> -->
             </div>
         </form>
     </div>
