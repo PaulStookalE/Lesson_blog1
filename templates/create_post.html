@@ -10,7 +10,7 @@
 {% block content %}
     <h1 id="title" class="title">Create Post</h1>
 
-    <form method="post" action="/create_post">
+    <form id="CreateForm" method="post" action="/create_post">
         {{ render_input('Title:', 'title', '', 'Enter the heading: ') }}
         {{ render_input('Content:', 'content', '', 'Enter the text of post: ') }}
         {{ render_input('Creator:', 'creator', '', 'Enter the nickname of creator: ') }}
@@ -18,10 +18,19 @@
 
         <div class="control">
             <button class="button is-primary" type="submit">Save</button>
+            <button class="button is-info clear-form" type="button">Clear Form</button>
         </div>
     </form>
 {% endblock %}
 
 
 {% block scripts %}
+<script>
+    // Очищення всіх полів у формі.
+    $(document).ready(function() {
+        $('.clear-form').click(function() {
+            document.getElementById('CreateForm').reset();
+        });
+    });
+</script>
 {% endblock %}

@@ -13,7 +13,7 @@
     <p id="p-created">{{ post.created }}</p>
     <a id="button-back" class="button is-info" href="/">Back</a>
     <a id="update-btn" href="/update_post/{{ post.id }}" class="button is-warning">Edit Post</a>
-    <button id="delete-btn" class="button is-danger delete-post">Delete Post</button>
+    <button id="delete-btn" class="button is-danger delete-post" data-id="{{ post.id }}">Delete Post</button>
 
 
 {% endblock %}

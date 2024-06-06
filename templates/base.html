@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,43 +7,44 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>{% block title %} {{ title }} {% endblock %}</title>
+    <!-- <title>{% block title %} {{ title }} {% endblock %}</title> -->
 </head>
 <body>
-    
-    <header class="header">
-        <div class="navbar">
-            <ul class="nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/create_post">Create Post</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+    <div class="wrapper">
+        <header>
+            <div class="navbar">
+                <ul class="nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
 
-    <section class="section">
-        <div class="container">
-            {% block content %}
-            {% endblock %}
-        </div>
-    </section>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_post">Create Post</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
+        <section class="section content">
+            <div class="container-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
 
-    <footer class="footer">
-        <div class="content-top">
-            <a class="icon-link" href="/"><i class="fa-regular fa-id-card fa-xl" style="color: #000000;"></i></a>
-            <span id="span-text" class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
-        </div>
+        <footer class="footer">
+            <div class="content-top">
+                <a class="icon-link" href="/"><i class="fa-regular fa-id-card fa-xl" style="color: #000000;"></i></a>
+                <span id="span-text" class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+            </div>
 
-        <div class="content-bottom">
-            <a class="icon-link" href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i></a>
-            <a class="icon-link" href="#"><i class="fa-brands fa-telegram fa-xl" style="color: #000000;"></i></a>
-        </div>
-    </footer>
+            <div class="content-bottom">
+                <a class="icon-link" href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i></a>
+                <a class="icon-link" href="#"><i class="fa-brands fa-telegram fa-xl" style="color: #000000;"></i></a>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {% block scripts %} {% endblock %}

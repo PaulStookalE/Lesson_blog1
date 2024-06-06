@@ -65,16 +65,20 @@ def update_post(id):
     post = session.query(Post).get(id)
 
     if request.method == 'POST':
-        content = request.form['content']
-        title = request.form['title']
+        title = request.form['Title:']
+        content = request.form['Content:']
+        creator = request.form['Creator:']
+        picture = request.form['Picture:']
 
-        if title or content:
+        if title or content or creator or picture:
 
             try:
                 # *У рамках вже будуть виведені поточні значення, проте користувач матиме змогу їх змінити.*
                 # Переприсвоюємо значення ключів title і content.
                 post.title = title
                 post.content = content
+                post.creator = creator
+                post.picture = picture
                 session.commit()
 
                 # Перенаправляємо користувача на інший роут.

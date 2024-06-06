@@ -11,18 +11,17 @@
     <div id="update-post">
         <h1 id="title" class="title">Edit Post</h1>
 
-        <form method="post" action="/update_post/{{ post.id }}">
+        <form id="UpdateForm" method="post" action="/update_post/{{ post.id }}">
     
-            <input type="hidden" value="PUT" name="_method">
+            <input type="hidden" name="_method">
     
-            {{ render_input('title', 'content', post.title, '') }}
-            {{ render_input('content', 'content', post.content, '') }}
+            {{ render_input('Title:', 'content', post.title, '') }}
+            {{ render_input('Content:', 'content', post.content, '') }}
             {{ render_input('Creator:', 'creator', post.creator, '') }}
             {{ render_input('Picture:', 'picture', post.picture, '') }}
     
             <div class="control">
                 <button class="button is-primary" type="submit">Save</button>
-                <!-- <button class="button is-info change-bg">Change Background Theme</button> -->
             </div>
         </form>
     </div>
@@ -30,11 +29,4 @@
 
 
 {% block scripts %}
-    <!-- <script>
-        $(document).ready(function() {
-            $(".change-bg").click(function() {
-                document.getElementById("update-post").style.backgroundColor = "black";
-            });
-        });
-    </script> -->
 {% endblock %}
